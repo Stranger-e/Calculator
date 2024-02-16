@@ -1,1 +1,3 @@
 # Calculator
+
+A mathematical calculator.
