@@ -79,6 +79,7 @@ function chooseOperation(op){
         operation = op;
     }
 
+
     else {
         secondNumber = currentNumber;
         currentNumber = '';
@@ -89,12 +90,11 @@ function chooseOperation(op){
         firstNumber = result;
         operation = op;
     }
-    updateDisplay(op)
 }
 
 function updateDisplay(value){
     if (value === '.' && currentNumber.includes('.')) return
-    currentNumber = value;
+    currentNumber += value;
     display.value = currentNumber;
 
 }
