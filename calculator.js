@@ -3,6 +3,12 @@ let display = document.querySelector('.display');
 let clearBtn = document.getElementById('clear');
 let numbers = document.querySelectorAll('.num');
 let operand = document.querySelectorAll('.operand')
+let equals = document.getElementById('equals')
+
+let currentNumber = '';
+let firstNumber = '';
+let operation = '';
+let secondNumber = '';
 
 
 const add = function(a, b){
@@ -23,25 +29,31 @@ const divide = function (a, b){
 
 console.log(divide(6, 3))
 
-let currentnumber = display.value;
-let firstNumber = ''
-let secondNumber = ''
 
-function operate(firstNumber, secondNumber){
-    if('+' == true ){
-        add(firstNumber, secondNumber);
+
+function operate(a, b, operator){
+
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    if(operator == '+'){
+        return add(a, b);
     }
 
-    else if ('-' == true ){
-        subtract(firstNumber, secondNumber);
+    else if (operator == '-'){
+        return subtract(a, b);
     }
 
-    else if ('*' == true ){
-        divide(firstNumber, secondNumber);
+    else if (operator == '*'){
+        return multiply(a, b);
     }
 
-    else if ('/' == true ){
-        divide(firstNumber, secondNumber);
+    else if (operator == '÷' ){
+        return divide(a, b);
+    }
+
+    else{
+        return 'Error'
     }
 }
 
@@ -52,43 +64,55 @@ numbers.forEach(function(numbers){
     })
 });
 
-function chooseOperation(button){
-    if (button.innerHTML == '+'){
-        operation = '+'
-    }
-
-    else if(button.innerHTML == '-'){
-        operation = '-' 
-    } 
-
-    else if(button.innerHTML == '*'){
-        operation = '*'
-    } 
-
-    else if(button.innerHTML == '÷'){
-        operation = '/'
-    } 
-
-    firstNumber = currentnumber;
-    currentnumber = ''
-}
 operand.forEach(function(button){
     button.addEventListener('click', function(){
         chooseOperation(button.innerHTML);
-        updateDisplay(button.innerHTML)
-    })
+    });
 })
 
+function chooseOperation(op){
+    let result;
+
+    if (firstNumber === ''){
+        firstNumber = currentNumber;
+        currentNumber = '';
+        operation = op;
+    }
+
+    else {
+        secondNumber = currentNumber;
+        currentNumber = '';
+
+        result = operate(firstNumber, secondNumber, operation);
+        display.value = result;
+        
+        firstNumber = result;
+        operation = op;
+    }
+    updateDisplay(op)
+}
+
 function updateDisplay(value){
-    if (value === '.' && currentnumber.includes('.')) return
-    display.value += value;
+    if (value === '.' && currentNumber.includes('.')) return
+    currentNumber = value;
+    display.value = currentNumber;
 
 }
 
-
+equals.addEventListener('click', function(){
+   if (firstNumber !== '' && operation !== '' && currentNumber !== ''){
+    secondNumber = currentNumber;
+    let result = operate(firstNumber, secondNumber, operation);
+    display.value = result;
+   } 
+});
 
 clearBtn.addEventListener('click', function(){
     display.value = '';
-})
+    currentNumber = '';
+    firstNumber = '';
+    secondNumber = '';
+    operation = '';
+});
 
 
