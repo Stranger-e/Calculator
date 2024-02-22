@@ -49,6 +49,10 @@ function operate(a, b, operator){
     }
 
     else if (operator == '÷' ){
+        if (b === 0) {
+            return 'Error! can\'t divide by 0';
+        }
+
         return divide(a, b);
     }
 
@@ -67,11 +71,23 @@ numbers.forEach(function(numbers){
 operand.forEach(function(button){
     button.addEventListener('click', function(){
         chooseOperation(button.innerHTML);
+        display.value = '';
     });
-})
+});
+
+function roundResult(result){
+    if (typeof result === 'number' && !isNaN(result)){
+        return parseFloat(result.toFixed(8));
+    }
+
+    else {
+        return result;
+    }
+}
 
 function chooseOperation(op){
     let result;
+
 
     if (firstNumber === ''){
         firstNumber = currentNumber;
@@ -84,7 +100,8 @@ function chooseOperation(op){
         secondNumber = currentNumber;
         currentNumber = '';
 
-        result = operate(firstNumber, secondNumber, operation);
+        let result = operate(firstNumber, secondNumber, operation);
+
         display.value = result;
         
         firstNumber = result;
@@ -103,7 +120,7 @@ equals.addEventListener('click', function(){
    if (firstNumber !== '' && operation !== '' && currentNumber !== ''){
     secondNumber = currentNumber;
     let result = operate(firstNumber, secondNumber, operation);
-    display.value = result;
+    display.value = roundResult(result);
    } 
 });
 
