@@ -4,9 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calc</title>
-    <script src="calculator.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="calculator.js" defer></script>
 </head>
 <body>
-    
+    <h1>CALCULATOR</h1>
+    <div class="container">
+        <div class="cover">
+            <input type="text" class="display" readonly>
+            <div class="buttons">
+                <div>
+                    <button id="num7" class="num">7</button>
+                    <button id="num8" class="num">8</button>
+                    <button id="num9" class="num">9</button>
+                    <button id="clear">AC</button>
+                </div>
+
+                <div>
+                    <button id="num4" class="num">4</button>
+                    <button id="num5" class="num">5</button>
+                    <button id="num6" class="num">6</button>
+                    <button id="add" class="operand">+</button>
+                </div>
+
+                <div>
+                    <button id="num1" class="num">1</button>
+                    <button id="num2" class="num">2</button>
+                    <button id="num3" class="num">3</button>
+                    <button id="minus" class="operand">-</button>
+                </div>
+
+                <div> 
+                    <button id="num0" class="num">0</button>
+                    <button id="dot" class="num">.</button>
+                    <button id="divide" class="operand">÷</button>
+                    <button id="times" class="operand">*</button>
+                </div>
+
+                <div>
+                     <BUTton id="equals" class="equals" class="operand">=</BUTton>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>

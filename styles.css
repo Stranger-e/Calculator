@@ -1,0 +1,43 @@
+h1 {
+   text-align: center;
+}
+
+body{
+    background-color: cornflowerblue;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover{
+    background-color: aquamarine;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid black;
+}
+
+.display{
+    height: 60px;
+    width: 98%;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: end;
+}
+
+button{
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.equals{
+    width: 100%;
+}
