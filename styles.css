@@ -1,8 +1,11 @@
 h1 {
    text-align: center;
+   padding: 0;
+
 }
 
 body{
+    height: 100%;
     padding: 0;
     margin: 0;
     background-color: #D5EEFF;
@@ -18,7 +21,7 @@ body{
 
 .cover{
     background-color: #78BBE6;
-    padding: 20px;
+    padding: 10px;
     border-radius: 12px;
     border: 1px solid black;
 }
@@ -56,4 +59,12 @@ button{
 .operand{
     background-color: #1B435D;
     color: white;
+}
+
+footer{
+    text-align: center;
+    background-color: #141E61;
+    padding: 10px;
+    color: white;
+    font-size: x-large;
 }
