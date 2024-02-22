@@ -1,3 +1,3 @@
 # Calculator
 
-A mathematical calculator.
+A mathematical calculator that performs all basic arithmetics.
