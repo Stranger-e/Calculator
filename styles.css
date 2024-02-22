@@ -3,7 +3,9 @@ h1 {
 }
 
 body{
-    background-color: cornflowerblue;
+    padding: 0;
+    margin: 0;
+    background-color: #D5EEFF;
 }
 
 .container{
@@ -15,10 +17,10 @@ body{
 }
 
 .cover{
-    background-color: aquamarine;
+    background-color: #78BBE6;
     padding: 20px;
     border-radius: 12px;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .display{
@@ -27,6 +29,8 @@ body{
     border-radius: 10px;
     border: 2px solid black;
     text-align: end;
+    font-size:large;
+    font-family: 'DSEG', monospace;
 }
 
 button{
@@ -40,4 +44,16 @@ button{
 
 .equals{
     width: 100%;
+    background-color: #FF347F;
+    opacity: 70%;
+    font-size: x-large;
+}
+
+#clear{
+    background-color: #DB2D43;
+}
+
+.operand{
+    background-color: #1B435D;
+    color: white;
 }

@@ -50,7 +50,7 @@ function operate(a, b, operator){
 
     else if (operator == '÷' ){
         if (b === 0) {
-            return 'Error! can\'t divide by 0';
+            return 'Error!';
         }
 
         return divide(a, b);
